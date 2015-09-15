@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function() { 
 			
 			//Canvas & Stage
 			var canvas=document.getElementById("canvas");
@@ -14,6 +14,8 @@ window.onload = function() {
 			var img = new Image();
 			img.src = "images/ship.svg";
 			img.onload = updateStage;
+
+			
 			
 			function updateStage(e){
 				bmp = new createjs.Bitmap(e.target);
