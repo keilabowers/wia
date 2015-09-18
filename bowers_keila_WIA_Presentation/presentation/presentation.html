@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">  
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>DropzoneJS Presentation</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js-3.1.0/css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- reference files for demo1 KDB -->
+		<link rel="stylesheet" type="text/css" href="../dropzone_demo/dropzone-4.0.1/dist/dropzone.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="../dropzone_demo/dropzone-4.0.1/dist/dropzone.js"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.1.0/css/print/pdf.css' : 'reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h1>DropzoneJS</h1>
+
+					<p>Created By: Keila Bowers</p>
+				</section>
+
+				<section>
+					<h2>What is DropzoneJS</h2>
+					<p>DropzoneJS a library created by <em>Matias Meno</em> that allows you to upload files with drag'n'drop and via your document window.</p>
+				</section>
+
+				<section id="fragments">
+					<h2>What makes DropzoneJS Awesome?</h2>
+					<ul id="fragments">
+						<li class="fragment">Lightweight
+							<ul>
+								<li class="fragment">Total Size: 88kb</li>
+								<li class="fragment">Total Size Minified: 49kb</li>
+							</ul>
+						</li>
+						<li class="fragment">Indepedent but plays well with others</li>
+						<li class="fragment">Works right out of the package</li>
+						<li class="fragment">Amazing documentation</li>
+						<li class="fragment">Easily and highly customizable</li>
+					</ul>
+
+					<p class="fragment"><strong>However, it doesn't handle server-side communications.</strong></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Getting Started with DropzoneJS</h2>
+						<p>Below is an example of how DropzoneJS works without customization.</p>
+						<form class="dropzone" id="testDropzone" action="/file-upload" method="post"></form>
+						<small>* Not actual demo</small>
+					</section>
+
+					<section>
+						<h3>HTML Code</h3>
+						<pre><code>
+<head>
+<title>DropzoneJS Demo</title>
+<link rel="stylesheet" type="text/css" href="dist/dropzone.css">
+<script type="text/javascript" src="dist/dropzone.js"></script>
+</head>
+<body>
+<form clas="dropzone" id="testDropzone" action="/file-upload" method="post"></form>	
+</body>							
+						</code></pre>
+						<ol id="fragments">
+							<li class="fragment">Link the JavaScript and CSS files to your HTML file</li>
+							<li class="fragment">Create Form element</li>
+							<li class="fragment">Add the class "dropzone" to the form element</li>
+						</ol>
+						<p class="fragment">That's it! It is up and running now.</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="#6D1523">
+					<h2>Make it work for you</h2>
+						<h4>DropzoneJS is set up to anticipate anything you could want to do.</h4>
+						<p>It has <em>options</em> to customize style and file requirements.</p>
+						<p>You can use <em>methods</em> to remove, upload or call files.</p>
+						<p>Built in <em>events</em>.</p>
+						<p class="fragment" style="float: right;">Let's get started...</p>
+					</section>
+					<section>
+						<h3>Setting up your JavaScript file</h3>
+						<pre><code>
+Dropzone.options.testDropzone = {
+	//insert options, methods and events here
+}							
+						</code></pre>
+					</section>
+					<section>
+						<h3>Options</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>Option</th>
+										<th>Possible Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>maxFileSize:</td>
+										<td>XXX, //units in MB</td>
+										<td>No Limit</td>
+									<tr>
+									<tr>
+										<td>maxFiles:</td>
+										<td>xx,</td>
+										<td>No Limit</td>
+									<tr>
+									<tr>
+										<td>acceptedFiles:</td>
+										<td>Limit by type (ie: "image/*",)</td>
+										<td>No Limit</td>
+									<tr>
+									<tr>
+										<td>previewTemplate:</td>
+										<td>HTML Layout, customizable</td>
+										<td>See Demo1</td>
+									<tr>
+									<tr>
+										<td>autoProcessQueue:</td>
+										<td>true or false,</td>
+										<td>true</td>
+									<tr>
+									<tr>
+										<td>addRemoveLinks:</td>
+										<td>true or false,</td>
+										<td>false</td>
+									<tr>							
+								</tbody>
+							</table>
+						<a href="http://www.dropzonejs.com/#configuration-options">Full List of Options can be found here</a>
+					</section>
+					<section>
+						<h3>Methods</h3>
+							<table>
+								<tbody>
+									<tr>
+										<td>.removeAllFiles();</td>
+										<td>.removeFile();</td>
+										<td>.processQueue();</td>
+									<tr>
+									<tr>
+										<td>.getAcceptedFiles();</td>
+										<td>.getRejectedFiles();</td>
+										<td>.getQueuedFiles();</td>
+									<tr>							
+								</tbody>
+							</table>
+					</section>	
+					<section>
+						<h3>Events</h3>
+							<pre><code>
+ Dropzone.options.testDropzone = {
+
+	init: function() {
+	    var submit = document.getElementById("submit");
+
+	    submit.addEventListener("dragstart", function() {
+	      //event task here 
+	    });
+	}
+};
+							</code></pre>
+							<table>
+								<tbody>
+									<tr>
+										<td>drop</td>
+										<td>dragstart</td>
+										<td>dragenter</td>
+									<tr>
+									<tr>
+										<td>processing</td>
+										<td>success</td>
+										<td>addedFile</td>
+									<tr>							
+								</tbody>
+							</table>
+
+						<a href="http://www.dropzonejs.com/#event-list">Full List of Events</a>
+					</section>
+				</section>
+
+				<section id="demo">
+					<object name="demo" type="text/javascript" data="../dropzone_demo/dropzone.html" style="width:100%; height: 600px;"/></object>
+	
+				</section>
+
+				<section>
+
+					<section>
+					<h2>DropzoneJS Demo</h2>
+					<h3>HTML Code</h3>
+					<pre><code data-trim contenteditable>
+
+<head>
+<title>DropzoneJS Demo</title>
+<link rel="stylesheet" type="text/css" href="dropzone-4.0.1/dist/dropzone.css">
+<link rel="stylesheet" type="text/css" href="upload.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="dropzone-4.0.1/dist/dropzone.js"></script>
+<script type="text/javascript" src="upload.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<h1>Dropzone<sup>JS</sup> Demo</h1>
+	<p>Please upload an image</p>
+	<p>Accepted file types: .jpg, .gif, and .png</p>
+	<form clas="dropzone" id="myDropzone" action="/file-upload" method="post"></form>
+	<button id="submit">Upload All Files</button>
+</div>	
+</body>
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>CSS Code</h3>
+						<pre><code data-trim contenteditable>
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background: url("contemporary_china.png") repeat;
+}
+
+#wrapper {
+	max-width: 75%;
+	margin: 50px auto;
+
+}
+
+#myDropzone, button {
+	border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+	-moz-box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+	box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+}
+
+
+#myDropzone .dz-remove {
+	background: rgba(90, 209, 193,.8);
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 5px;
+	color: #000;
+	font-weight: 600;
+	position: absolute;
+	top: 85px;
+	left: 15px;
+	z-index: 1001;
+}
+
+sup {
+	font-size: 8px;
+}
+
+button {
+	font-size: 18px;
+	color: #fff;
+	background: #5AD1C1;
+	padding: 10px; 
+	margin: 25px 25px 0 0;
+	float: right;
+	border: none;
+}
+						</code></pre>	
+					</section>
+					<section>
+						<h3>JavaScript with DropzoneJS</h3>
+						<pre><code data-trim contenteditable>
+
+
+ Dropzone.options.myDropzone = {
+        addRemoveLinks: true,
+        acceptedFiles: "image/*",
+        //acceptedFiles: "application/pdf",
+        //acceptedFiles: ".gif",
+        autoProcessQueue: false,
+
+	init: function() {
+	    var submit = document.getElementById("submit");
+	    myDropzone = this;
+
+	    submit.addEventListener("click", function() {
+	      myDropzone.processQueue(); 
+	    });
+
+		myDropzone.on("complete", function(){ //do not use 'processing' with hang-up first item
+			myDropzone.options.autoProcessQueue = true;
+			myDropzone.processQueue();
+
+		});
+
+	}
+
+}; 
+						</code></pre>
+					</section>	
+
+				</section>
+
+				<section data-background="#6D1523">
+					<h2>Resources</h2>
+					<p>Images used in demo created by Keila Bowers.</p>
+					<p>Background pattern in demo from subtlepatterns.com</p>
+					<p><strong>Library Information from: </strong>Meno, M. (n.d.). Dropzone.js. Retrieved September 9, 2015, from http://www.dropzonejs.com</p>
+					
+				</section>
+
+			</div>
+		</div>
+
+
+		<script src="reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js-3.1.0/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+
+</html>

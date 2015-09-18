@@ -1,0 +1,48 @@
+/* DropzoneJS demo by Keila Bowers */
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background: url("contemporary_china.png") repeat;
+}
+
+#wrapper {
+	max-width: 75%;
+	margin: 50px auto;
+	background: url("contemporary_china.png") repeat;
+}
+
+#myDropzone, button {
+	border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+	-moz-box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+	box-shadow: 5px 5px 15px -3px rgba(206,206,206,1);
+}
+
+
+#myDropzone .dz-remove {
+	background: rgba(90, 209, 193,.8);
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 5px;
+	color: #000;
+	font-weight: 600;
+	position: absolute;
+	top: 88px;
+	left: 15px;
+	z-index: 1001;
+}
+
+#wrapper sup {
+	font-size: 8px;
+}
+
+#wrapper button {
+	font-size: 18px;
+	color: #fff;
+	background: #5AD1C1;
+	padding: 10px; 
+	margin: 25px 25px 0 0;
+	float: right;
+	border: none;
+
+}
